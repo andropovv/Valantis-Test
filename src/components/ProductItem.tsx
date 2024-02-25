@@ -9,7 +9,7 @@ interface IProductItem {
 const ProductItem: FC<IProductItem> = ({ brand, price, product }) => {
     return (
         <div
-            className='flex w-40 h-32 rounded-sm flex-col shadow-md m-1 p-2 justify-between border
+            className='flex w-36 h-32 rounded-sm flex-col shadow-md m-1 p-2 justify-between border
         '
         >
             <div className='text-sm'>

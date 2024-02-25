@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import ProductItem from './ProductItem';
 import { Product } from '../types/products';
-import Loader from './Loader';
+import Loader from './UI/Loader';
 
 interface IProductList {
     isLoading: boolean;
@@ -10,7 +10,7 @@ interface IProductList {
 
 const ProductsList: FC<IProductList> = ({ isLoading, products }) => {
     return (
-        <div className='flex flex-wrap gap-1 my-0 mx-auto mb-3'>
+        <div className='grid grid-cols-autofill gap-2 mb-3'>
             {!isLoading && products?.length ? (
                 products.map((p) => (
                     <ProductItem
@@ -20,8 +20,12 @@ const ProductsList: FC<IProductList> = ({ isLoading, products }) => {
                         price={p.price}
                     />
                 ))
+            ) : isLoading ? (
+                <div className='flex justify-center w-[100vw] mt-[30vh]'>
+                    <Loader />
+                </div>
             ) : (
-                <Loader />
+                <div>Товары не найдены</div>
             )}
         </div>
     );

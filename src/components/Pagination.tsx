@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Pagination = ({
     page,
     onPagination,
@@ -16,14 +14,14 @@ const Pagination = ({
     return (
         <div className='flex self-center gap-4'>
             <div
-                className={page !== 0 ? 'cursor-pointer text-blue-500 italic' : ' '}
+                className={page !== 0 ? 'cursor-pointer text-blue-400 italic' : ' '}
                 onClick={handlePrevPage}
             >
                 Предыдущая страница
             </div>
             <div className='text-gray-400'>{page}</div>
             <div
-                className='cursor-pointer text-blue-500 italic'
+                className='cursor-pointer text-blue-400 italic'
                 onClick={() => onPagination(page + 1)}
             >
                 Следующая страница
